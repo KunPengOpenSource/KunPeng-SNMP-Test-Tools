@@ -1,0 +1,105 @@
+﻿<Window x:Class="Qishi_Tester.SNMP_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SNMP_Tester" Height="520" Width="734" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Width="703">
+        <TabControl Name="tabControl1" Margin="0,-2,3,0">
+            <TabItem Header="通信测试" Name="tabItem1" Height="23" VerticalAlignment="Top">
+                <Grid>
+                    <Canvas Margin="0,0,6,6" Height="445">
+                        <Canvas.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStopCollection>
+                                    <GradientStop Color="White"></GradientStop>
+                                </GradientStopCollection>
+                            </LinearGradientBrush>
+                        </Canvas.Background>
+                        <TextBlock Text="设备的IP:" Height="23" HorizontalAlignment="Left" Margin="12,42,0,0" Name="lbHostIP1" VerticalAlignment="Top" Width="66" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="98,44,0,0" Name="txHostIP1" VerticalAlignment="Top" Width="120" MaxLength="15" />
+                        <TextBlock Text="端口:" Height="23" HorizontalAlignment="Left" Margin="12,75,0,0" Name="lbPort1" VerticalAlignment="Top" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Text="161" Margin="98,75,0,0" Name="txPort1" VerticalAlignment="Top" Width="53" />
+                        <TextBlock Text="SNMP版本:" Height="23" HorizontalAlignment="Left" Margin="12,109,0,0" Name="lbSnmpVer1" VerticalAlignment="Top" />
+                        <ComboBox Height="23" HorizontalAlignment="Right" Margin="0,109,20,0" Name="cbSnmpVer1" VerticalAlignment="Top" Width="120" Canvas.Left="98" Canvas.Top="-3">
+                            <ComboBoxItem Content="SNMP V2c" IsSelected="True"></ComboBoxItem>
+                        </ComboBox>
+                        <TextBlock Text="Community:" Height="23" HorizontalAlignment="Left" Margin="12,145,0,0" Name="lbComm1" VerticalAlignment="Top" />
+                        <TextBox Height="23" Text="public" HorizontalAlignment="Left" Margin="98,145,0,0" Name="txComm1" VerticalAlignment="Top" Width="120" />
+                        <TextBlock Text="自定义OID:" Height="23" HorizontalAlignment="Left" Margin="12,174,0,0" Name="lbOid1" VerticalAlignment="Top" />
+                        <TextBox Text="1.3.6.1.2.1.1.1" Height="23" HorizontalAlignment="Left" Margin="98,174,0,0" Name="txOid1" VerticalAlignment="Top" Width="120" MaxLength="50" />
+                        <Button Content="运行检测" Height="23" HorizontalAlignment="Left" Margin="98,203,0,0" Name="btnCheck1" VerticalAlignment="Top" Width="75" Click="btnCheck1_Click" />
+                        <TextBox TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" AcceptsReturn ="True" Text="显示探测过程和通信测试结果。" Canvas.Left="253" Canvas.Top="12" Height="427" Name="txResult1" Width="248" />
+                    </Canvas>
+                </Grid>
+            </TabItem>
+            <TabItem Header="服务器检测" Name="tabItem2">
+                <Grid Height="447" Width="632">
+                    <Canvas Margin="0,0,6,0">
+                        <Canvas.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStopCollection>
+                                    <GradientStop Color="White"></GradientStop>
+                                </GradientStopCollection>
+                            </LinearGradientBrush>
+                        </Canvas.Background>
+                        <TextBlock Text="设备的IP:" Height="23" HorizontalAlignment="Left" Margin="12,42,0,0" Name="lbHostIP2" VerticalAlignment="Top" Width="66" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="98,44,0,0" Name="txHostIP2" VerticalAlignment="Top" Width="120" />
+                        <TextBlock Text="端口:" Height="23" HorizontalAlignment="Left" Margin="12,75,0,0" Name="lbPort2" VerticalAlignment="Top" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Text="161" Margin="98,75,0,0" Name="txPort2" VerticalAlignment="Top" Width="53" />
+                        <TextBlock Text="SNMP版本:" Height="23" HorizontalAlignment="Left" Margin="12,109,0,0" Name="lbSnmpVer2" VerticalAlignment="Top" />
+                        <ComboBox Height="23" HorizontalAlignment="Right" Margin="0,109,20,0" Name="cbSnmpVer2" VerticalAlignment="Top" Width="100" Canvas.Left="98" Canvas.Top="-3">
+                            <ComboBoxItem Content="SNMP V2c" IsSelected="True" ></ComboBoxItem>
+                        </ComboBox>
+                        <TextBlock Text="Community:" Height="23" HorizontalAlignment="Left" Margin="12,145,0,0" Name="lbComm2" VerticalAlignment="Top" />
+                        <TextBox Height="23" Text="public" HorizontalAlignment="Left" Margin="98,174,0,0" Name="txComm2" VerticalAlignment="Top" Width="120" Canvas.Left="0" Canvas.Top="-32" />
+                        <TextBlock Canvas.Left="12" Canvas.Top="182" Height="23" Name="lbOid2" Text="自定义Oid:" />
+                        <TextBox Canvas.Left="98" Canvas.Top="179" Height="23" Name="txOid2" Width="120" />
+                        <Button Content="运行检测" Height="23" HorizontalAlignment="Left" Margin="98,203,0,0" Name="btnCheck2" VerticalAlignment="Top" Width="75" Click="btnCheck2_Click" Canvas.Left="0" Canvas.Top="9" />
+                        <TextBox TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" AcceptsReturn ="True" Text="显示探测过程和通信测试结果。" Canvas.Left="308" Canvas.Top="42" Height="292" Name="txResult2" Width="230" />
+                    </Canvas>
+                </Grid>
+            </TabItem>
+            <TabItem Header="网络设备检测" Name="tabItem3">
+                <Grid Height="447" Width="632">
+                    <Canvas Margin="0,0,6,6">
+                        <Canvas.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStopCollection>
+                                    <GradientStop Color="White"></GradientStop>
+                                </GradientStopCollection>
+                            </LinearGradientBrush>
+                        </Canvas.Background>
+                        <TextBlock Text="设备的IP:" Height="23" HorizontalAlignment="Left" Margin="12,42,0,0" Name="lbHostIP3" VerticalAlignment="Top" Width="66" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="98,44,0,0" Name="txHostIP3" VerticalAlignment="Top" Width="120" />
+                        <TextBlock Text="端口:" Height="23" HorizontalAlignment="Left" Margin="12,75,0,0" Name="lbPort3" VerticalAlignment="Top" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Text="161" Margin="98,75,0,0" Name="txPort3" VerticalAlignment="Top" Width="53" />
+                        <TextBlock Text="SNMP版本:" Height="23" HorizontalAlignment="Left" Margin="12,109,0,0" Name="lbSnmpVer3" VerticalAlignment="Top" />
+                        <ComboBox Height="23" HorizontalAlignment="Right" Margin="0,109,20,0" Name="cbSnmpVer3" VerticalAlignment="Top" Width="100" Canvas.Left="98" Canvas.Top="-3">
+                            <ComboBoxItem Content="SNMP V2c" IsSelected="True"></ComboBoxItem>
+                        </ComboBox>
+                        <TextBlock Text="Community:" Height="23" HorizontalAlignment="Left" Margin="12,145,0,0" Name="lbComm3" VerticalAlignment="Top" />
+                        <TextBox Height="23" Text="public" HorizontalAlignment="Left" Margin="98,145,0,0" Name="txComm3" VerticalAlignment="Top" Width="120" />
+                        <TextBlock Text="设备类型:" Height="23" HorizontalAlignment="Left" Margin="12,174,0,0" Name="lbType3" VerticalAlignment="Top" />
+                        <ComboBox Canvas.Left="98" Canvas.Top="174" Height="23" Name="cbType3" Width="100">
+                            <ComboBoxItem Content="路由器" IsSelected="True" />
+                            <ComboBoxItem Content="二层交换机" />
+                            <ComboBoxItem Content="三层交换机" />
+                        </ComboBox>
+                        <TextBlock Canvas.Left="12" Canvas.Top="203" Height="23" Name="lbVendor3" Text="厂商名:" />
+                        <ComboBox Canvas.Left="98" Canvas.Top="203" Height="23" Name="chVendor3" Width="100">
+                            <ComboBoxItem Content="思科" IsSelected="True" >
+                            </ComboBoxItem>
+                            <ComboBoxItem Content="华为" />
+                            <ComboBoxItem Content="中兴" />
+                            <ComboBoxItem Content="H3C" />
+                            <ComboBoxItem Content="神舟数码" />
+                        </ComboBox>
+                        <TextBlock Canvas.Left="12" Canvas.Top="232" Height="23" Name="lbOid3" Text="自定义OID:" />
+                        <TextBox Canvas.Left="98" Canvas.Top="232" Height="23" MaxLength="50" Name="txOid3"  Width="120" />
+                        <Button Content="运行检测" Height="23" HorizontalAlignment="Left" Margin="98,203,0,0" Name="btnCheck3" VerticalAlignment="Top" Width="75" Canvas.Left="0" Canvas.Top="58" Click="btnCheck3_Click" />
+                        <TextBox TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" AcceptsReturn ="True" Text="显示探测过程和通信测试结果。" Canvas.Left="305" Canvas.Top="42" Height="364" Name="txResult3" Width="294" />
+                    </Canvas>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

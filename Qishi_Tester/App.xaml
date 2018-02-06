@@ -1,0 +1,43 @@
+﻿<Application x:Class="Qishi_Tester.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="SNMPTester.xaml">
+    <Application.Resources>
+        <!--Windows窗体边框的阴影效果 -->
+        <Style x:Key="for_noresize_window" TargetType="{x:Type Window}">
+            <Setter Property="AllowsTransparency" Value="true"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontFamily" Value="Consolas, Microsoft YaHei"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="ResizeMode" Value="NoResize"/>
+            <Setter Property="WindowStyle" Value="None"/>
+            <Setter Property="ShowInTaskbar" Value="True"/>
+            <Setter Property="Topmost" Value="False"/>
+            <Setter Property="AllowDrop" Value="True"/>
+            <Setter Property="Icon" Value="Image/ico.ico"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Window}">
+                        <Grid Margin="10">
+                            <Rectangle Fill="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"  
+                               RadiusX="5" RadiusY="5">
+                                <Rectangle.Effect>
+                                    <DropShadowEffect BlurRadius="10" ShadowDepth="0"/>
+                                </Rectangle.Effect>
+                            </Rectangle>
+                            <Border Background="{TemplateBinding Background}"  
+                            BorderBrush="{TemplateBinding BorderBrush}"  
+                            BorderThickness="{TemplateBinding BorderThickness}"  
+                            Padding="{TemplateBinding Margin}"  
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"  
+                            CornerRadius="5">
+                                <ContentPresenter />
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Application.Resources>
+</Application>

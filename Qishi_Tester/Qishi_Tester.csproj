@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EF31E2CF-BECC-4418-90E3-1B406C33AEDF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Qishi_Tester</RootNamespace>
+    <AssemblyName>Qishi_Tester</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Image\ico.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Administration, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\System32\inetsrv\Microsoft.Web.Administration.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Controls\NewTextBox.xaml.cs">
+      <DependentUpon>NewTextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\InfoTextBox.cs" />
+    <Compile Include="SnmpSharpNet\AgentParameters.cs" />
+    <Compile Include="SnmpSharpNet\AsnType.cs" />
+    <Compile Include="SnmpSharpNet\AsyncRequestResult.cs" />
+    <Compile Include="SnmpSharpNet\AsyncRequestState.cs" />
+    <Compile Include="SnmpSharpNet\Exception\SnmpAuthenticationException.cs" />
+    <Compile Include="SnmpSharpNet\Exception\SnmpDecodingException.cs" />
+    <Compile Include="SnmpSharpNet\Exception\SnmpException.cs" />
+    <Compile Include="SnmpSharpNet\Exception\SnmpInvalidPduTypeException.cs" />
+    <Compile Include="SnmpSharpNet\Exception\SnmpInvalidVersionException.cs" />
+    <Compile Include="SnmpSharpNet\Exception\SnmpNetworkException.cs" />
+    <Compile Include="SnmpSharpNet\Exception\SnmpPrivacyException.cs" />
+    <Compile Include="SnmpSharpNet\IAgentParameters.cs" />
+    <Compile Include="SnmpSharpNet\MutableByte.cs" />
+    <Compile Include="SnmpSharpNet\Pdu.cs" />
+    <Compile Include="SnmpSharpNet\PduErrorStatus.cs" />
+    <Compile Include="SnmpSharpNet\PduType.cs" />
+    <Compile Include="SnmpSharpNet\SecureAgentParameters.cs" />
+    <Compile Include="SnmpSharpNet\security\Authentication.cs" />
+    <Compile Include="SnmpSharpNet\security\AuthenticationDigests.cs" />
+    <Compile Include="SnmpSharpNet\security\AuthenticationMD5.cs" />
+    <Compile Include="SnmpSharpNet\security\AuthenticationSHA1.cs" />
+    <Compile Include="SnmpSharpNet\security\IAuthenticationDigest.cs" />
+    <Compile Include="SnmpSharpNet\security\IPrivacyProtocol.cs" />
+    <Compile Include="SnmpSharpNet\security\MsgFlags.cs" />
+    <Compile Include="SnmpSharpNet\security\Privacy3DES.cs" />
+    <Compile Include="SnmpSharpNet\security\PrivacyAES.cs" />
+    <Compile Include="SnmpSharpNet\security\PrivacyAES128.cs" />
+    <Compile Include="SnmpSharpNet\security\PrivacyAES192.cs" />
+    <Compile Include="SnmpSharpNet\security\PrivacyAES256.cs" />
+    <Compile Include="SnmpSharpNet\security\PrivacyDES.cs" />
+    <Compile Include="SnmpSharpNet\security\PrivacyProtocol.cs" />
+    <Compile Include="SnmpSharpNet\security\PrivacyProtocols.cs" />
+    <Compile Include="SnmpSharpNet\security\ScopedPdu.cs" />
+    <Compile Include="SnmpSharpNet\security\SNMPV3ReportError.cs" />
+    <Compile Include="SnmpSharpNet\security\UserSecurityModel.cs" />
+    <Compile Include="SnmpSharpNet\SimpleSnmp.cs" />
+    <Compile Include="SnmpSharpNet\SnmpConstants.cs" />
+    <Compile Include="SnmpSharpNet\SnmpError.cs" />
+    <Compile Include="SnmpSharpNet\SnmpPacket.cs" />
+    <Compile Include="SnmpSharpNet\SnmpV1Packet.cs" />
+    <Compile Include="SnmpSharpNet\SnmpV1TrapPacket.cs" />
+    <Compile Include="SnmpSharpNet\SnmpV2Packet.cs" />
+    <Compile Include="SnmpSharpNet\SnmpV3Packet.cs" />
+    <Compile Include="SnmpSharpNet\SnmpVersion.cs" />
+    <Compile Include="SnmpSharpNet\TrapAgent.cs" />
+    <Compile Include="SnmpSharpNet\TrapPdu.cs" />
+    <Compile Include="SnmpSharpNet\Types\Counter32.cs" />
+    <Compile Include="SnmpSharpNet\Types\Counter64.cs" />
+    <Compile Include="SnmpSharpNet\Types\EndOfMibView.cs" />
+    <Compile Include="SnmpSharpNet\Types\EthernetAddress.cs" />
+    <Compile Include="SnmpSharpNet\Types\Gauge32.cs" />
+    <Compile Include="SnmpSharpNet\Types\Integer32.cs" />
+    <Compile Include="SnmpSharpNet\Types\IpAddress.cs" />
+    <Compile Include="SnmpSharpNet\Types\NoSuchInstance.cs" />
+    <Compile Include="SnmpSharpNet\Types\NoSuchObject.cs" />
+    <Compile Include="SnmpSharpNet\Types\Null.cs" />
+    <Compile Include="SnmpSharpNet\Types\OctetString.cs" />
+    <Compile Include="SnmpSharpNet\Types\Oid.cs" />
+    <Compile Include="SnmpSharpNet\Types\Opaque.cs" />
+    <Compile Include="SnmpSharpNet\Types\Sequence.cs" />
+    <Compile Include="SnmpSharpNet\Types\TimeTicks.cs" />
+    <Compile Include="SnmpSharpNet\Types\UInteger32.cs" />
+    <Compile Include="SnmpSharpNet\Types\V2Error.cs" />
+    <Compile Include="SnmpSharpNet\Types\V2PartyClock.cs" />
+    <Compile Include="SnmpSharpNet\UdpTarget.cs" />
+    <Compile Include="SnmpSharpNet\UdpTransport.cs" />
+    <Compile Include="SnmpSharpNet\Vb.cs" />
+    <Compile Include="SnmpSharpNet\VbCollection.cs" />
+    <Compile Include="SNMPTester.xaml.cs">
+      <DependentUpon>SNMPTester.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SNMP_Window.xaml.cs">
+      <DependentUpon>SNMP_Window.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Controls\NewTextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SNMPTester.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StyleDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="SNMP_Window.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\nav1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\words1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\nav2.png" />
+    <Resource Include="Image\nav3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\btn1.png" />
+    <Resource Include="Image\btn2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\words2.png" />
+    <Resource Include="Image\words3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\btn3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\line1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\words5.png" />
+    <Resource Include="Image\words6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\words7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\words8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\words9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\slogan .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\words10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\nav4.png" />
+    <Resource Include="Image\nav5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\words11.png" />
+    <Resource Include="Image\words12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\words13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\words14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\btn4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\ico.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\words15.png" />
+    <Resource Include="Image\background2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="words20.png" />
+    <Resource Include="SnmpSharpNet\CHANGES.txt" />
+    <Resource Include="SnmpSharpNet\lgpl.txt" />
+    <Resource Include="Image\nav6.png" />
+    <Resource Include="Image\nav7.png" />
+    <Resource Include="Image\nav8.png" />
+    <Resource Include="Image\words16.png" />
+    <Resource Include="Image\words17.png" />
+    <Resource Include="Image\words18.png" />
+    <Resource Include="Image\words20.png" />
+    <Content Include="SnmpSharpNet\SnmpSharpNet.csproj" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

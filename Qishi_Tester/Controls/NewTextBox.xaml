@@ -1,0 +1,119 @@
+﻿<TextBox x:Class="Qishi_Tester.NewTextBox"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         SelectionChanged="TextBox_SelectionChanged">
+    <TextBox.Template>
+        <ControlTemplate TargetType="{x:Type TextBox}">
+                <!-- 文本框 -->
+            <ScrollViewer Name="PART_ContentHost" MouseWheel="PART_ContentHost_MouseWheel" Initialized="PART_ContentHost_Initialized">
+                    <ScrollViewer.Template>
+                        <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <ScrollContentPresenter Margin="5,5,0,5" />
+                            <ScrollBar Name="PART_VerticalScrollBar" Grid.Column="1" Value="{TemplateBinding VerticalOffset}" Maximum="{TemplateBinding ScrollableHeight}" ViewportSize="{TemplateBinding ViewportHeight}" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}">
+                                    <ScrollBar.Template>
+                                        <ControlTemplate TargetType="{x:Type ScrollBar}">
+                                            <!-- 竖向滚动条宽度 -->
+                                        <Grid Width="9" Background="#D8D8D8" >
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="1" />
+                                                    <RowDefinition />
+                                                    <RowDefinition Height="1" />
+                                                </Grid.RowDefinitions>
+                                                <Track x:Name="PART_Track" Grid.Row="1" IsDirectionReversed="True">
+                                                    <Track.DecreaseRepeatButton>
+                                                        <!--上空白-->
+                                                        <RepeatButton Command="ScrollBar.PageUpCommand">
+                                                            <RepeatButton.Template>
+                                                                <ControlTemplate>
+                                                                <Border/>
+                                                                </ControlTemplate>
+                                                            </RepeatButton.Template>
+                                                        </RepeatButton>
+                                                    </Track.DecreaseRepeatButton>
+                                                    <Track.Thumb>
+                                                        <!--滑块-->
+                                                        <Thumb>
+                                                            <Thumb.Template>
+                                                                <ControlTemplate>
+                                                                <Border Background="#2B2B2B" CornerRadius="5"/>
+                                                                </ControlTemplate>
+                                                            </Thumb.Template>
+                                                        </Thumb>
+                                                    </Track.Thumb>
+                                                    <Track.IncreaseRepeatButton>
+                                                        <!--下空白-->
+                                                        <RepeatButton Command="ScrollBar.PageDownCommand">
+                                                            <RepeatButton.Template>
+                                                                <ControlTemplate>
+                                                                <Border/>
+                                                                </ControlTemplate>
+                                                            </RepeatButton.Template>
+                                                        </RepeatButton>
+                                                    </Track.IncreaseRepeatButton>
+                                                </Track>
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </ScrollBar.Template>
+                                </ScrollBar>
+                                <ScrollBar Name="PART_HorizontalScrollBar" Orientation="Horizontal" Grid.Row="1" Value="{TemplateBinding HorizontalOffset}" Maximum="{TemplateBinding ScrollableWidth}" ViewportSize="{TemplateBinding ViewportWidth}" Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}">
+                                    <ScrollBar.Template>
+                                        <ControlTemplate TargetType="{x:Type ScrollBar}">
+                                            <!-- 横滚动条高度 -->
+                                            <Grid Height="10">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="1" />
+                                                    <ColumnDefinition />
+                                                    <ColumnDefinition Width="1" />
+                                                </Grid.ColumnDefinitions>
+                                                <Track x:Name="PART_Track" Grid.Column="1" IsDirectionReversed="False">
+                                                    <Track.DecreaseRepeatButton>
+                                                        <!--左空白-->
+                                                        <RepeatButton Command="ScrollBar.PageLeftCommand" Opacity="0.5">
+                                                            <RepeatButton.Template>
+                                                                <ControlTemplate>
+                                                                    <Border Background="{Binding Path=ScrollBarBackground,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type TextBox}}}" CornerRadius="5,0,0,5" />
+                                                                </ControlTemplate>
+                                                            </RepeatButton.Template>
+                                                        </RepeatButton>
+                                                    </Track.DecreaseRepeatButton>
+                                                    <Track.Thumb>
+                                                        <!--滑块-->
+                                                        <Thumb>
+                                                            <Thumb.Template>
+                                                                <ControlTemplate>
+                                                                    <Border Background="{Binding Path=ScrollBarForeground,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type TextBox}}}" CornerRadius="5" />
+                                                                </ControlTemplate>
+                                                            </Thumb.Template>
+                                                        </Thumb>
+                                                    </Track.Thumb>
+                                                    <Track.IncreaseRepeatButton>
+                                                        <!--右空白-->
+                                                        <RepeatButton Command="ScrollBar.PageRightCommand" Opacity="0.5">
+                                                            <RepeatButton.Template>
+                                                                <ControlTemplate>
+                                                                    <Border Background="{Binding Path=ScrollBarBackground,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type TextBox}}}" CornerRadius="0,5,5,0" />
+                                                                </ControlTemplate>
+                                                            </RepeatButton.Template>
+                                                        </RepeatButton>
+                                                    </Track.IncreaseRepeatButton>
+                                                </Track>
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </ScrollBar.Template>
+                                </ScrollBar>
+                            </Grid>
+                        </ControlTemplate>
+                    </ScrollViewer.Template>
+                </ScrollViewer>
+        </ControlTemplate>
+    </TextBox.Template>
+</TextBox>
