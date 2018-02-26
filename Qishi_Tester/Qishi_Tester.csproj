@@ -139,9 +139,6 @@
     <Compile Include="SNMPTester.xaml.cs">
       <DependentUpon>SNMPTester.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SNMP_Window.xaml.cs">
-      <DependentUpon>SNMP_Window.xaml</DependentUpon>
-    </Compile>
     <Page Include="Controls\NewTextBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -158,10 +155,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="SNMP_Window.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -261,7 +254,6 @@
     <Resource Include="Image\background2.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="words20.png" />
     <Resource Include="SnmpSharpNet\CHANGES.txt" />
     <Resource Include="SnmpSharpNet\lgpl.txt" />
     <Resource Include="Image\nav6.png" />
