@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qishi_Tester", "Qishi_Tester\Qishi_Tester.csproj", "{EF31E2CF-BECC-4418-90E3-1B406C33AEDF}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SNMP_Tester", "SNMP_Tester\SNMP_Tester.csproj", "{EF31E2CF-BECC-4418-90E3-1B406C33AEDF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,4 +1,4 @@
-﻿<Application x:Class="Qishi_Tester.App"
+﻿<Application x:Class="SNMP_Tester.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              StartupUri="SNMPTester.xaml">

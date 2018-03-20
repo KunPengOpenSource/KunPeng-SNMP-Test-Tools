@@ -5,7 +5,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
-namespace Qishi_Tester
+namespace SNMP_Tester
 {
     /// <summary>
     /// 文本消息框控件

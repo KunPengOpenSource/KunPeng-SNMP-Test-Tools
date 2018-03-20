@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:my="clr-namespace:Qishi_Tester">
+    xmlns:my="clr-namespace:SNMP_Tester">
 
     <SolidColorBrush x:Key="NormalColor">#2D2D2D</SolidColorBrush>
     <SolidColorBrush x:Key="HighlightColor">#2D2D2D</SolidColorBrush>
@@ -289,11 +289,11 @@
     </VisualBrush>
     <Style x:Key="iTextStyle" TargetType="{x:Type TextBox}">
         <Setter Property="Height" Value="25"></Setter>
-        <Setter Property="Background" Value="#FFF2F2F2"></Setter>
+        <Setter Property="Background" Value="#FFFFFFFF"></Setter>
         <Setter Property="BorderThickness" Value="1"></Setter>
-        <Setter Property="BorderBrush" Value="#C9C9C9"></Setter>
+        <Setter Property="BorderBrush" Value="#dbdbdb"></Setter>
         <Setter Property="FontSize" Value="13"></Setter>
-        <Setter Property="Foreground" Value="#666666"></Setter>
+        <Setter Property="Foreground" Value="#4c4c4c"></Setter>
         <Setter Property="FontFamily" Value="新宋体"></Setter>
         <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
         <Style.Triggers>
@@ -307,19 +307,19 @@
     </Style>
     <Style x:Key="iTextStyle2" TargetType="{x:Type TextBox}">
         <Setter Property="Height" Value="25"></Setter>
-        <Setter Property="Background" Value="#FFF2F2F2"></Setter>
+        <Setter Property="Background" Value="#FFFFFFFF"></Setter>
         <Setter Property="BorderThickness" Value="1"></Setter>
-        <Setter Property="BorderBrush" Value="#C9C9C9"></Setter>
+        <Setter Property="BorderBrush" Value="#dbdbdb"></Setter>
         <Setter Property="FontSize" Value="13"></Setter>
-        <Setter Property="Foreground" Value="#666666"></Setter>
+        <Setter Property="Foreground" Value="#4c4c4c"></Setter>
         <Setter Property="FontFamily" Value="新宋体"></Setter>
         <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
         <Style.Triggers>
             <Trigger Property="Text" Value="{x:Null}">
-                <Setter Property="Background" Value="{StaticResource OID}"/>
+                <Setter Property="Background" Value="{StaticResource HelpBrush}"/>
             </Trigger>
             <Trigger Property="Text" Value="">
-                <Setter Property="Background" Value="{StaticResource OID}"/>
+                <Setter Property="Background" Value="{StaticResource HelpBrush}"/>
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -352,12 +352,13 @@
     <!--自定义下拉框样式-->
     <Style x:Key="iListStyle" TargetType="{x:Type ComboBox}">
         <Setter Property="SnapsToDevicePixels" Value="True"/>
-        <Setter Property="Height" Value="25"></Setter>
-        <Setter Property="Background" Value="#FFF2F2F2"></Setter>
+        <Setter Property="Height" Value="36"></Setter>
+        <Setter Property="Background" Value="#FFFFFFFF"></Setter>
         <Setter Property="BorderThickness" Value="1"></Setter>
-        <Setter Property="BorderBrush" Value="#C9C9C9"></Setter>
-        <Setter Property="FontSize" Value="13"></Setter>
-        <Setter Property="Foreground" Value="#333333"></Setter>
+        <Setter Property="BorderBrush" Value="#dbdbdb"></Setter>
+        <Setter Property="FontSize"   Value="14"></Setter>
+        <Setter Property="Foreground" Value="#4c4c4c"></Setter>
+        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
     </Style>
     <Style x:Key="btnHome" TargetType="{x:Type Button}">
         <Setter Property="Height" Value="30"></Setter>
@@ -368,67 +369,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border BorderThickness="0">
-                        <Image Name="imgBtnHome" Stretch="Fill" Source="Image/nav1.png" />
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    <Style x:Key="btnDNStest" TargetType="{x:Type Button}">
-        <Setter Property="Height" Value="17"></Setter>
-        <Setter Property="Width" Value="108"></Setter>
-        <Setter Property="Cursor" Value="Hand"/>
-        <Setter Property="ClickMode" Value="Press"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <Border BorderThickness="0">
-                        <Image Name="imgBtnDNStest" Stretch="Fill" Source="Image/nav2.png" />
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    <Style x:Key="btnWhois" TargetType="{x:Type Button}">
-        <Setter Property="Height" Value="17"></Setter>
-        <Setter Property="Width" Value="125"></Setter>
-        <Setter Property="Cursor" Value="Hand"/>
-        <Setter Property="ClickMode" Value="Press"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <Border BorderThickness="0">
-                        <Image Name="imgBtnWhois" Stretch="Fill" Source="Image/nav3.png" />
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    <Style x:Key="btnHttpStatus" TargetType="{x:Type Button}">
-        <Setter Property="Height" Value="16"></Setter>
-        <Setter Property="Width" Value="110"></Setter>
-        <Setter Property="Cursor" Value="Hand"/>
-        <Setter Property="ClickMode" Value="Press"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <Border BorderThickness="0">
-                        <Image Name="imgBtnDNStest" Stretch="Fill" Source="Image/nav4.png" />
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    <Style x:Key="btnHttpFast" TargetType="{x:Type Button}">
-        <Setter Property="Height" Value="18"></Setter>
-        <Setter Property="Width" Value="111"></Setter>
-        <Setter Property="Cursor" Value="Hand"/>
-        <Setter Property="ClickMode" Value="Press"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <Border BorderThickness="0">
-                        <Image Name="imgBtnWhois" Stretch="Fill" Source="Image/nav5.png" />
+                        <Image Name="imgBtnHome" Stretch="Fill" Source="Image/words10.png" />
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
@@ -494,21 +435,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style x:Key="btnHttpMore2" TargetType="{x:Type Button}">
-        <Setter Property="Height" Value="17"></Setter>
-        <Setter Property="Width" Value="105"></Setter>
-        <Setter Property="Cursor" Value="Hand"/>
-        <Setter Property="ClickMode" Value="Press"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <Border BorderThickness="0">
-                        <Image Name="imgBtnDNStest" Stretch="Fill" Source="Image/words12.png" />
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
+
     <Style x:Key="btnClose" TargetType="{x:Type Button}">
         <Setter Property="Height" Value="15"></Setter>
         <Setter Property="Width" Value="15"></Setter>

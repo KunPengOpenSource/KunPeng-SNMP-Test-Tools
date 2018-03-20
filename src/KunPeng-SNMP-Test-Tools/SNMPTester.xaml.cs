@@ -18,7 +18,7 @@ using System.Net.Sockets;
 using System.Threading;
 
 
-namespace Qishi_Tester
+namespace SNMP_Tester
 {
     /// <summary>
     /// SNMPTester.xaml 的交互逻辑
@@ -46,6 +46,9 @@ namespace Qishi_Tester
                 x.Visibility = Visibility.Hidden;
             }
             can[0].Visibility = Visibility.Visible;
+            imgNetworks.Visibility = Visibility.Hidden;
+            imgServers.Visibility = Visibility.Hidden;
+            imgCommunications.Visibility = Visibility.Hidden;
         }
 
         private void btnCommunication_Click_1(object sender, RoutedEventArgs e)
@@ -55,6 +58,9 @@ namespace Qishi_Tester
                 x.Visibility = Visibility.Hidden;
             }
             can[1].Visibility = Visibility.Visible;
+            imgNetworks.Visibility = Visibility.Hidden;
+            imgServers.Visibility = Visibility.Hidden;
+            imgCommunications.Visibility = Visibility.Visible;
         }
 
         private void btnServer_Click_1(object sender, RoutedEventArgs e)
@@ -64,6 +70,9 @@ namespace Qishi_Tester
                 x.Visibility = Visibility.Hidden;
             }
             can[2].Visibility = Visibility.Visible;
+            imgNetworks.Visibility = Visibility.Hidden;
+            imgServers.Visibility = Visibility.Visible;
+            imgCommunications.Visibility = Visibility.Hidden;
         }
 
         private void btnNetwork_Click_1(object sender, RoutedEventArgs e)
@@ -73,6 +82,9 @@ namespace Qishi_Tester
                 x.Visibility = Visibility.Hidden;
             }
             can[3].Visibility = Visibility.Visible;
+            imgNetworks.Visibility = Visibility.Visible;
+            imgServers.Visibility = Visibility.Hidden;
+            imgCommunications.Visibility = Visibility.Hidden;
         }
 
         private void closeBtn_Click_1(object sender, RoutedEventArgs e)
@@ -95,7 +107,7 @@ namespace Qishi_Tester
                 string host = txHostIP1.Text;
                 if (!IsValidIp(host))
                 {
-                    MessageBox.Show("IP格式不正确!请重新输入。");
+                    UMessageBox.Show("提示","IP格式不正确!请重新输入。");
                     return;
                 }
                 int port = 161;
@@ -104,13 +116,13 @@ namespace Qishi_Tester
                     port = Convert.ToInt32(txPort1.Text);
                     if (port < 0 || port > 65535)
                     {
-                        MessageBox.Show("请输入0-65535之间的端口号!");
+                        UMessageBox.Show("提示", "请输入0-65535之间的端口号!");
                         return;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("请输入0-65535之间的端口号！");
+                    UMessageBox.Show("提示", "请输入0-65535之间的端口号！");
                     return;
                 }
                 //int snmpver = cbSnmpVer1.SelectedIndex + 1;
@@ -125,7 +137,7 @@ namespace Qishi_Tester
 
                         if (dic.Count == 0)
                         {
-                            MessageBox.Show("检测不到相关Oid信息，请检查后重试。");
+                            UMessageBox.Show("提示", "检测不到相关Oid信息，请检查后重试。");
                         }
                         
                         foreach (var item in dic)
@@ -141,7 +153,7 @@ namespace Qishi_Tester
                     }
                     else
                     {
-                        MessageBox.Show("请输入OID信息后重试。");   
+                        UMessageBox.Show("提示", "请输入OID信息后重试。");   
                     }
                     dic = getWalkValue(host, port, snmpver, comm, "1.3.6.1.2.1.1.1");
                     foreach (var item in dic)
@@ -153,7 +165,7 @@ namespace Qishi_Tester
             catch (Exception ex)
             {
                 ex.Message.ToString();
-                MessageBox.Show("检测不到相关Oid信息，请检查后重试。");
+                UMessageBox.Show("提示", "检测不到相关Oid信息，请检查后重试。");
             }
         }
 
@@ -520,7 +532,7 @@ namespace Qishi_Tester
                 string host = txHostIP2.Text;
                 if (!IsValidIp(host))
                 {
-                    MessageBox.Show("IP格式不正确!请重新输入。");
+                    UMessageBox.Show("提示", "IP格式不正确!请重新输入。");
                     return;
                 }
                 int port = 161;
@@ -529,13 +541,13 @@ namespace Qishi_Tester
                     port = Convert.ToInt32(txPort2.Text);
                     if (port < 0 || port > 65535)
                     {
-                        MessageBox.Show("请输入0-65535之间的端口号!");
+                        UMessageBox.Show("提示", "请输入0-65535之间的端口号!");
                         return;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("请输入0-65535之间的端口号！");
+                    UMessageBox.Show("提示", "请输入0-65535之间的端口号！");
                     return;
                 }
                 int snmpver = 2;
@@ -727,7 +739,7 @@ namespace Qishi_Tester
             catch (Exception ex)
             {
                 ex.Message.ToString();
-                MessageBox.Show("检测不到相关Oid信息，请检查后重试。");
+                UMessageBox.Show("提示", "检测不到相关Oid信息，请检查后重试。");
             }
         }
 
@@ -738,7 +750,7 @@ namespace Qishi_Tester
                 string host = txHostIP3.Text;
                 if (!IsValidIp(host))
                 {
-                    MessageBox.Show("IP格式不正确!请重新输入。");
+                    UMessageBox.Show("提示", "IP格式不正确!请重新输入。");
                     return;
                 }
                 int port = 161;
@@ -747,13 +759,13 @@ namespace Qishi_Tester
                     port = Convert.ToInt32(txPort3.Text);
                     if (port < 0 || port > 65535)
                     {
-                        MessageBox.Show("请输入0-65535之间的端口号!");
+                        UMessageBox.Show("提示", "请输入0-65535之间的端口号!");
                         return;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("请输入0-65535之间的端口号！");
+                    UMessageBox.Show("提示", "请输入0-65535之间的端口号！");
                     return;
                 }
                 int snmpver = 2;
@@ -887,7 +899,7 @@ namespace Qishi_Tester
             catch (Exception ex)
             {
                 ex.Message.ToString();
-                MessageBox.Show("检测不到相关Oid信息，请检查后重试。");
+                UMessageBox.Show("提示", "检测不到相关Oid信息，请检查后重试。");
             }
         }
 
