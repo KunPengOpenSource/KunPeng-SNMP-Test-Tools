@@ -115,7 +115,7 @@
                 <ComboBoxItem Content="神舟数码" />
             </ComboBox>
             <TextBlock Canvas.Left="19" Canvas.Top="291" Height="16" Name="lbOid3" Text="自定义OID:" FontSize="14" Foreground="#4c4c4c"  />
-            <TextBox Canvas.Left="114" Canvas.Top="284" Height="34" MaxLength="50" Name="txOid3"  Width="180" Style="{StaticResource iTextStyle}"/>
+            <TextBox Canvas.Left="114" Canvas.Top="284" Height="34" MaxLength="50" Name="txOid3"  Width="180" Style="{StaticResource iTextStyle2}"/>
             <Button Content="运行检测" Height="50" HorizontalAlignment="Left" Name="btnCheck3" VerticalAlignment="Top" Width="114" Canvas.Left="99" Canvas.Top="324" Style="{StaticResource btn2}" Click="btnCheck3_Click_1" />
             <Image Canvas.Left="322" Canvas.Top="29"  Name="imgNetwork" Stretch="Fill" Width="146" Height="17" Source="Image/words18.png"  />
             <uc:NewTextBox TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" AcceptsReturn ="True" Canvas.Top="62" Height="290"  x:Name="txResult3" Width="460" Canvas.Left="320" Foreground="#FF666666" />

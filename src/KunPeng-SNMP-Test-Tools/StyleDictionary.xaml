@@ -316,10 +316,10 @@
         <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
         <Style.Triggers>
             <Trigger Property="Text" Value="{x:Null}">
-                <Setter Property="Background" Value="{StaticResource HelpBrush}"/>
+                <Setter Property="Background" Value="{StaticResource OID}"/>
             </Trigger>
             <Trigger Property="Text" Value="">
-                <Setter Property="Background" Value="{StaticResource HelpBrush}"/>
+                <Setter Property="Background" Value="{StaticResource OID}"/>
             </Trigger>
         </Style.Triggers>
     </Style>
